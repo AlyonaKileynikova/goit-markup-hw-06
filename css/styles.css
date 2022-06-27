@@ -292,6 +292,8 @@ img {
   background-color: var(--accent-color);
 }
 
+/* -------------МОДАЛЬНОЕ ОКНО------------- */
+
 .backdrop {
   position: fixed;
   top: 0;
@@ -329,6 +331,7 @@ img {
     opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 1;
   visibility: visible;
+  padding: 40px;
 }
 
 .modal-close-btn {
@@ -344,6 +347,239 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  fill: var(--accent-color);
+}
+
+
+.modal-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: calc(23px / 20px);
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: #212121;
+}
+
+.modal-form {
+  margin: 12px 0px 20px;
+  display: block;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;  
+}
+
+.user-info:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.user-info input {
+  padding: 11px 12px 11px 42px;
+  background-color: transparent;
+}
+
+.user-info label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: #757575;
+}
+
+
+.input-form,
+.comment-area {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  margin-top: 4px;
+  outline: none;
+  cursor: pointer;
+
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-form:hover, .comment-area:hover,
+.input-form:focus, .comment-area:focus {
+  border: 1px solid var(--accent-color);
+}
+
+
+/* .icon-input:hover .input-icon,
+.icon-input:focus .input-icon {
+  fill: var(--accent-color);
+} */
+
+.input-form:hover + .input-icon,
+.input-form:focus + .input-icon {
+  fill: var(--accent-color);
+}
+
+.icon-input {
+  position: relative;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  display: inline-block;
+  left: 12px;
+  top: -2px;
+  fill: var(--title-text-color);
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+textarea {
+  resize: none;
+  background-color: transparent;
+}
+
+.comment-area {
+  height: 120px;
+  padding: 12px 16px;
+}
+
+.user-info textarea::placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
+}
+
+
+
+.agreement-checkbox {
+  display: flex;
+  align-items: center;
+  margin: 0 12px;
+  position: relative;
+}
+
+.checkbox {
+  /* appearance: none;
+  position: absolute; */
+/* ----visually-hidden----- */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}  
+
+.agreement-text::before {
+  content: "";
+  display: block;
+  margin-right: 8px;
+  width: 16px;
+  height: 15px;
+  border: 2px solid #000000;
+  border-radius: 2px;
+  /* background-color: #ffffff;
+  background-image: url('../images/checkbox-border.svg');
+  background-repeat: no-repeat;
+  background-size: contain; */
+}
+
+
+.agreement-text::before:focus {
+  border-color: var(--accent-color);
+}
+
+/* .icon-check-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-2px, 25%);
+} */
+
+
+.checkbox:checked + .agreement-text::before {
+  background-color: var(--accent-color);
+  background-image: url('../images/icon check.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  border-color: var(--accent-color);
+}
+
+
+/* .icon-check-border:hover {
+  fill: var(--accent-color);
+} */
+
+.agreement-checkbox input[type="checkbox"] {
+
+}
+
+.agreement-text {
+  /* margin-left: 7px; */
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: #757575;
+  /* position: relative; */
+  display: flex;
+  align-items: center;
+
+}
+
+.agreement-text a {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.btn-submit {
+  display: inline-block;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 10px 55px;
+  margin: 30px 124px 0px;
+  border: 1px solid transparent;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  background-color: var(--accent-color);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-submit:hover,
+.btn-submit:focus {
+  background-color: var(--accent-color);
 }
 
 /* ------------НАШИ ПРИНЦИПЫ--------- */
@@ -635,6 +871,10 @@ img {
   justify-content: center;
 }
 
+.contacts-address {
+  flex-grow: 1;
+}
+
 .logo-down {
   display: inline-block;
   margin-bottom: 20px;
@@ -694,7 +934,8 @@ img {
   margin-left: 70px;
 }
 
-.enjoy-text {
+.enjoy-text,
+.subscribe-text {
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -740,6 +981,70 @@ img {
 
 .enjoy-soc-icon {
   fill: #ffffff;
+}
+
+.subscribe {
+  display: flex;
+  flex-direction: row;
+  margin-left: 93px;
+  padding: 0;
+}
+
+.subscribe-form {
+  width: 100%;
+}
+
+.subscribe-email {
+  width: 358px;
+  min-height: 50px;
+  margin-right: 12px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.subscribe-wrap {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn-subscribe {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 4px;
+  margin: 0;
+  padding: 10px 28px 10px 29px;
+  border: 1px solid transparent;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  width: 200px;
+  height: 50px;
+  background-color: var(--accent-color);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.telegram-icon {
+  display: flex;
+  position: absolute;
+  top: 25%;
+  left: 75%;
+  fill: #ffffff;
+  /* translate: transfom (-50%, -50%); */
 }
 
 /* --------- СТРАНИЦА ПОРТФОЛИО -------- */
