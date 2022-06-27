@@ -506,9 +506,14 @@ textarea {
 }
 
 
-.agreement-text::before:focus {
-  border-color: var(--accent-color);
+.checkbox:focus + .agreement-text {
+  background-color: transparent;
+  outline: 2px solid var(--accent-color);
 }
+
+/* .agreement-text::before:focus {
+  border-color: var(--accent-color);
+} */
 
 /* .icon-check-border {
   position: absolute;
