@@ -508,7 +508,7 @@ textarea {
 
 .checkbox:focus + .agreement-text {
   background-color: transparent;
-  outline: 2px solid var(--accent-color);
+  outline: 1px solid var(--accent-color);
 }
 
 /* .agreement-text::before:focus {
