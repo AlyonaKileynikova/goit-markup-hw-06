@@ -14,7 +14,6 @@ html {
 /* цвет контактов в футере rgba(255, 255, 255, 0.6) */
 /* акцент #2196F3 */
 /* цвет фона верхнего блока с кнопкой и футера #2F303A */
-
 /* вторичный цвет фона #F5F4FA */
 
 :root {
@@ -154,20 +153,9 @@ img {
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* .nav-link:hover::after,
-.nav-link:focus::after {
-    content: '';
-    width: 100%;
-    opacity: 1;
-} */
-
 .current.nav-link {
   color: var(--accent-color);
 }
-
-/* .item.current > .nav.link::after {
-    color: var(--accent-color);
-} */
 
 .contacts {
   display: flex;
@@ -183,16 +171,6 @@ img {
   fill: #757575;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-/* .top-tel {
-    min-width: 122px;
-    /* margin-right: 15px;
-}
-
-.top-mail {
-    margin-right: 50px;
-    margin-left: auto;
-} */
 
 .contacts-item:not(:last-child) {
   margin-right: 30px;
@@ -365,7 +343,6 @@ img {
   line-height: calc(23px / 20px);
   text-align: center;
   letter-spacing: 0.03em;
-
   color: #212121;
 }
 
@@ -405,7 +382,6 @@ img {
   margin-top: 4px;
   outline: none;
   cursor: pointer;
-
   transition-property: border;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -516,7 +492,6 @@ textarea {
   outline: 2px solid var(--accent-color);
 } */
 
-
 .checkbox:checked + .agreement-text::before {
   background-color: var(--accent-color);
   background-image: url("../images/icon check.svg");
@@ -526,9 +501,7 @@ textarea {
   border-color: var(--accent-color);
 }
 
-
 .agreement-checkbox input[type="checkbox"] {
-  justify-content: c;
 }
 
 .agreement-text {
@@ -604,9 +577,6 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.principles-icon {
 }
 
 .principles-title {
